@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GhostNumbers | Premium Virtual SMS & Privacy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-ghost"></i> Ghost<span>Numbers</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li>
+                        <button id="login-btn" class="btn-google-top">
+                            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="G">
+                            Login with Google
+                        </button>
+                    </li>
+                    <li><a href="#" onclick="showSection('home')"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#" onclick="showSection('my-numbers')"><i class="fas fa-list"></i> My Numbers</a></li>
+                    <li><a href="mailto:hly983962@gmail.com"><i class="fas fa-headset"></i> Support</a></li>
+                    <li>
+                        <button class="btn-private" onclick="openPrivateModal()">
+                            <i class="fas fa-star"></i> Private Numbers
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section id="home-section">
+            <div class="hero">
+                <div class="hero-badge">Verified Virtual Infrastructure</div>
+                <h1>Secure Your Privacy with <span>GhostNumbers</span></h1>
+                <p>Get instant access to high-quality virtual numbers for SMS verification. Fast, secure, and untraceable worldwide.</p>
+                <div class="hero-stats">
+                    <div class="stat-item"><b>100+</b><span>Active Nodes</span></div>
+                    <div class="stat-item"><b>8+</b><span>Countries</span></div>
+                    <div class="stat-item"><b>24/7</b><span>Uptime</span></div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feat-card">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Instant Delivery</h3>
+                        <p>Receive your SMS codes in milliseconds with our high-speed API.</p>
+                    </div>
+                    <div class="feat-card">
+                        <i class="fas fa-user-secret"></i>
+                        <h3>Total Privacy</h3>
+                        <p>No personal information required. Your data stays yours.</p>
+                    </div>
+                    <div class="feat-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Anti-Spam Filter</h3>
+                        <p>Advanced system to filter out junk and keep your inbox clean.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="section-title">
+                    <h2><i class="fas fa-globe-americas"></i> Free Public Numbers</h2>
+                    <p>Select a country to explore available virtual numbers for temporary use.</p>
+                </div>
+                <div class="country-grid" id="free-countries">
+                    </div>
+            </div>
+
+            <div id="numbers-display" class="container" style="display:none;">
+                <div class="numbers-wrapper">
+                    <h3 id="selected-country-name">Available Numbers</h3>
+                    <div class="numbers-list" id="numbers-list"></div>
+                </div>
+            </div>
+
+            <div id="sms-interface" class="container" style="display:none;">
+                <div class="sms-card">
+                    <div class="sms-card-header">
+                        <div class="current-info">
+                            <span id="active-num">Selecting Number...</span>
+                            <span class="status-badge"><i class="fas fa-circle"></i> Online</span>
+                        </div>
+                        <div class="sms-buttons">
+                            <button onclick="copyNum()" class="action-btn"><i class="fas fa-copy"></i> Copy Number</button>
+                            <button onclick="refreshSMS()" class="action-btn refresh"><i class="fas fa-sync-alt"></i> Refresh Messages</button>
+                        </div>
+                    </div>
+                    <div class="messages-viewport" id="messages-viewport">
+                        </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="faq-card">
+                    <div class="faq-icon"><i class="fas fa-lightbulb"></i></div>
+                    <div class="faq-text">
+                        <h3>Why do some numbers not receive SMS?</h3>
+                        <p>Major platforms like <b>WhatsApp</b> or <b>Google</b> often block public numbers. To bypass this, refresh the page, try another number, or use our <strong>Private Numbers</strong> for a 100% success rate.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="my-numbers-section" class="container" style="display:none;">
+            <div class="empty-state">
+                <div class="empty-icon"><i class="fas fa-folder-open"></i></div>
+                <h2>No Private Numbers Found</h2>
+                <p>You haven't purchased any exclusive numbers yet. All your private numbers will appear here after payment.</p>
+                <button class="btn-private" style="margin-top:25px;" onclick="openPrivateModal()">Purchase My First Number</button>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="section-title"><h2>What Users Say</h2></div>
+            <div class="testimonials">
+                <div class="t-card">"The fastest service I've used for Telegram verification." - <b>Alex R.</b></div>
+                <div class="t-card">"Private numbers are worth every cent. Works perfectly with WhatsApp." - <b>Sarah K.</b></div>
+                <div class="t-card">"Finally a site that actually receives Google codes!" - <b>Mike T.</b></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo"><i class="fas fa-ghost"></i> GhostNumbers</div>
+            <p>&copy; 2026 GhostNumbers Virtual Services. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+                <a href="mailto:hly983962@gmail.com">Contact Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="private-modal" class="modal">
+        <div class="modal-content animate-pop">
+            <span class="close-modal" onclick="closePrivateModal()">&times;</span>
+            <div class="modal-header">
+                <h2><i class="fas fa-shield-halved"></i> Get Private Number</h2>
+                <p>Choose your country for exclusive access</p>
+            </div>
+            <div class="private-grid">
+                <div class="p-item" onclick="selectPrivate('USA', 1.50)">🇺🇸 USA <span>$1.50</span></div>
+                <div class="p-item" onclick="selectPrivate('UK', 1.20)">🇬🇧 UK <span>$1.20</span></div>
+                <div class="p-item" onclick="selectPrivate('Germany', 2.00)">🇩🇪 Germany <span>$2.00</span></div>
+                <div class="p-item" onclick="selectPrivate('Russia', 0.80)">🇷🇺 Russia <span>$0.80</span></div>
+                <div class="p-item" onclick="selectPrivate('India', 0.50)">🇮🇳 India <span>$0.50</span></div>
+                <div class="p-item" onclick="selectPrivate('Vietnam', 0.40)">🇻🇳 Vietnam <span>$0.40</span></div>
+            </div>
+
+            <div id="payment-area" style="display:none; margin-top: 25px; border-top: 1px solid #f1f5f9; padding-top: 20px;">
+                <p style="text-align: center; font-weight: 800; color: #1e293b; margin-bottom: 12px; font-size: 18px;">
+                    Send <span id="price-tag" style="color: #f59e0b; font-size: 26px;">0.00</span> USDT (BEP20)
+                </p>
+                <div class="crypto-address-container">
+                    <div class="crypto-address-wrapper">
+                        <div class="crypto-address">
+                            <span>0x93f48580914F7BaAD24c2F802e88fdA2b4cD4Bc5</span>
+                        </div>
+                    </div>
+                    <button class="copy-addr-btn" onclick="copyCryptoAddress()">
+                        <i class="fas fa-copy"></i> Copy Wallet Address
+                    </button>
+                </div>
+                <p style="font-size: 11px; text-align: center; color: #94a3b8; margin-top: 15px;">
+                    <i class="fas fa-info-circle"></i> Activation is automatic after network confirmation.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

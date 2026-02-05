@@ -1,0 +1,188 @@
+/* --- Global Variables & Reset --- */
+:root {
+    --main-blue: #4361ee;
+    --main-blue-hover: #3046c7;
+    --soft-bg: #f8fafc;
+    --card-white: #ffffff;
+    --dark-text: #0f172a;
+    --light-text: #64748b;
+    --gold: #f59e0b;
+    --border-color: #e2e8f0;
+    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--soft-bg);
+    color: var(--dark-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    padding: 12px 0;
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-container {
+    max-width: 1300px; 
+    margin: 0 auto;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 24px;
+}
+
+.logo { 
+    font-size: 24px; 
+    font-weight: 800; 
+    color: var(--main-blue);
+    white-space: nowrap;
+}
+
+.logo span { color: #1e293b; }
+
+.nav-links { 
+    list-style: none; 
+    display: flex; 
+    gap: 18px; 
+    align-items: center; 
+}
+
+.nav-links a { 
+    text-decoration: none; 
+    color: var(--dark-text); 
+    font-weight: 600; 
+    font-size: 14px; 
+}
+
+.nav-links a:hover { color: var(--main-blue); }
+
+/* --- Google Login Button --- */
+.btn-google-top {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    padding: 7px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: inherit;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+
+.btn-google-top img {
+    width: 18px !important;
+    height: 18px !important;
+}
+
+.btn-google-top:hover {
+    background: #f1f5f9;
+}
+
+/* --- Private Button --- */
+.btn-private {
+    background: linear-gradient(135deg, var(--gold), #d97706);
+    color: white; 
+    border: none; 
+    padding: 9px 18px; 
+    border-radius: 10px;
+    cursor: pointer; 
+    font-weight: 700;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+}
+
+/* --- Hero Section & Stats --- */
+.hero { text-align: center; padding: 90px 20px; }
+.hero h1 { font-size: 48px; margin-bottom: 20px; font-weight: 800; }
+.hero h1 span { color: var(--main-blue); }
+.hero p { font-size: 19px; color: var(--light-text); max-width: 650px; margin: 0 auto; }
+
+.hero-stats { display: flex; justify-content: center; gap: 30px; margin-top: 40px; }
+.stat-item { background: white; padding: 15px 30px; border-radius: 20px; box-shadow: var(--shadow); }
+.stat-item b { display: block; font-size: 22px; color: var(--main-blue); }
+.stat-item span { font-size: 12px; color: var(--light-text); font-weight: 600; }
+
+/* --- Features & Grid --- */
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 60px; }
+.feat-card { background: white; padding: 35px; border-radius: 25px; text-align: center; border-bottom: 5px solid var(--main-blue); box-shadow: var(--shadow); }
+.feat-card i { font-size: 32px; color: var(--main-blue); margin-bottom: 15px; }
+
+.country-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 20px; }
+.country-card { background: white; padding: 35px 20px; border-radius: 24px; text-align: center; cursor: pointer; box-shadow: var(--shadow); border: 2px solid transparent; }
+.country-card:hover { transform: translateY(-10px); border-color: var(--main-blue); }
+
+/* --- Payment UI (The Enhanced Part) --- */
+.crypto-address-wrapper { padding: 10px; }
+.crypto-address { 
+    background: #fffbeb; 
+    color: #92400e; 
+    padding: 25px; 
+    border-radius: 20px; 
+    font-family: 'Courier New', monospace; 
+    font-size: 19px; 
+    font-weight: 900;
+    text-align: center;
+    border: 3px dashed var(--gold); 
+    word-break: break-all;
+    box-shadow: 0 5px 15px rgba(245, 158, 11, 0.15);
+}
+
+.copy-addr-btn {
+    width: 100%;
+    background: #1e293b;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+/* --- SMS UI --- */
+.sms-card { background: white; border-radius: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1); overflow: hidden; margin-top: 50px; }
+.sms-card-header { background: #f8faff; padding: 30px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; }
+.messages-viewport { height: 500px; overflow-y: auto; padding: 30px; }
+.msg-bubble { background: #f1f5f9; padding: 22px; border-radius: 20px; margin-bottom: 18px; border-left: 5px solid var(--main-blue); position: relative; }
+
+/* --- Testimonials & FAQ --- */
+.testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+.t-card { background: #f1f5f9; padding: 25px; border-radius: 20px; font-style: italic; font-size: 14px; position: relative; }
+.faq-card { background: #fffbeb; padding: 40px; border-radius: 28px; border-left: 8px solid var(--gold); margin-top: 60px; }
+
+/* --- Footer --- */
+footer { background: #0f172a; color: white; padding: 60px 0; margin-top: 80px; text-align: center; }
+.footer-links { margin-top: 25px; display: flex; justify-content: center; gap: 25px; }
+.footer-links a { color: #94a3b8; text-decoration: none; font-size: 14px; }
+
+/* --- Modals --- */
+.modal { display: none; position: fixed; z-index: 2000; top:0; left:0; width:100%; height:100%; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(10px); justify-content: center; align-items: center; }
+.modal-content { background: white; width: 95%; max-width: 500px; padding: 40px; border-radius: 35px; position: relative; }
+.private-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 25px; }
+.p-item { background: #f8fafc; padding: 20px; border-radius: 20px; cursor: pointer; border: 2px solid #f1f5f9; font-weight: 700; position: relative; }
+.p-item span { color: #10b981; float: right; }
+
+.animate-pop { animation: pop 0.3s ease; }
+@keyframes pop { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
